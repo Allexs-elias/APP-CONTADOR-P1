@@ -74,9 +74,11 @@ class _CounterScreenState extends State<CounterScreen> {
             tooltip: 'Restar uno',
             shape: const StadiumBorder(),
             onPressed: () {
-              setState(() {
-                clickCounter--;
-              });
+              if (clickCounter > 0) {
+                setState(() {
+                  clickCounter--;
+                });
+              }
             },
             child: const Icon(Icons.exposure_minus_1),
           ),
